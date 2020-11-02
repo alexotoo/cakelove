@@ -1,0 +1,453 @@
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes|Raleway&display=swap");
+
+/* font-family: 'Great Vibes', cursive;
+font-family: 'Raleway', sans-serif; */
+
+/* reset global */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Raleway", sans-serif;
+}
+
+/* variables global */
+:root {
+  --main-fontColor-white: #ffffff;
+  --primary-fontColor-darkgray: #4b4b4b;
+  --primary-titleColor-gold: #daa520;
+}
+
+/* all sections */
+section {
+  padding: 6rem 0;
+}
+/* fonts */
+.section-text {
+  line-height: 1.5;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--primary-fontColor-darkgray);
+}
+a {
+  text-decoration: none;
+  color: var(--main-fontColor-white);
+}
+/* header  starts */
+header {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent),
+    url(/img/cake-11.jpg) bottom no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+}
+
+/* utilities/components */
+.btn-info {
+  padding: 1rem;
+  color: var(--primary-titleColor-gold);
+  border-bottom: 2px solid var(--primary-titleColor-gold);
+  margin: 2rem 0 4rem 0;
+  display: inline-block;
+  transform: all 2s;
+  font-size: 1.2rem;
+}
+.btn-info:hover {
+  background-color: var(--primary-titleColor-gold);
+  color: var(--main-fontColor-white);
+  transform: translateY(-2px);
+}
+.btn-info:active {
+  background-color: var(--primary-titleColor-gold);
+  color: var(--main-fontColor-white);
+  transform: translateY(0);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.btn {
+  display: inline-block;
+  transition: all 600ms;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+}
+
+.custom-font {
+  font-family: "Great Vibes", cursive;
+  color: var(--primary-titleColor-gold);
+  font-size: 6rem;
+  text-align: center;
+  line-height: 1;
+  font-weight: bold;
+}
+.custom-font-secondary {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-right: -5px;
+  letter-spacing: 5px;
+  line-height: 2;
+  color: var(--primary-fontColor-darkgray);
+  margin-bottom: 2rem;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+.head-cake {
+  background-color: rgba(15, 12, 12, 0.253);
+}
+/* header main text */
+.main-text {
+  line-height: 0;
+  margin: auto;
+  color: var(--main-fontColor-white);
+  user-select: none;
+}
+.main-text h1 {
+  color: var(--primary-titleColor-gold);
+  font-family: "Great Vibes", cursive;
+  margin-bottom: 5rem;
+  font-size: 8rem;
+  font-weight: 100;
+}
+.main-text h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  margin-right: -0.5rem;
+  font-size: 2rem;
+  position: relative;
+  line-height: 1;
+}
+.main-text h2::before,
+.main-text h2::after {
+  content: "";
+  width: 4rem;
+  height: 0.3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  background-color: var(--main-fontColor-white);
+  border-radius: 0.8rem;
+}
+.main-text h2::before {
+  left: -2rem;
+}
+.main-text h2::after {
+  right: -2rem;
+}
+
+.main-btn {
+  font-size: 1.5rem;
+  border: 0.2rem solid var(--primary-titleColor-gold);
+  padding: 2rem 2.5rem;
+  letter-spacing: 0.3rem;
+  margin-right: -0.3rem;
+  position: relative;
+  margin-top: 3rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* menu */
+.menu {
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  padding: 1rem;
+  position: fixed;
+  top: 3rem;
+  right: 3rem;
+  z-index: 1000;
+  cursor: pointer;
+  background-color: rgba(17, 16, 16, 0.712);
+  border-radius: 50%;
+}
+
+.menu .bar {
+  width: 4rem;
+  height: 0.2rem;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 0.3rem;
+  transition: 300ms;
+}
+.menu .menu-1 {
+  top: 20px;
+  left: 18px;
+}
+.menu .menu-2 {
+  top: 30px;
+  left: 13px;
+}
+.menu .menu-3 {
+  top: 40px;
+  left: 5px;
+}
+.menu:hover .bar {
+  left: 11px;
+}
+
+/* nav */
+
+.nav {
+  height: 100vh;
+  width: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 900;
+  transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.overlay {
+  /* background-color: rgba(0, 0, 0, 0.877); */
+  position: fixed;
+  z-index: 800;
+  width: 0.1rem;
+  height: 0.1rem;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+  background-color: transparent;
+}
+.nav ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+.nav ul li {
+  padding: 2rem;
+}
+.nav ul li a {
+  font-size: 2rem;
+  text-transform: uppercase;
+  transition: all ease-in-out 0.25s;
+}
+.nav ul li a:hover,
+.nav ul li a:active {
+  color: var(--primary-titleColor-gold);
+  font-size: 2.5rem;
+}
+
+#checkbox_toggle {
+  display: none;
+}
+#checkbox_toggle:checked ~ .overlay {
+  background-color: rgba(0, 0, 0, 0.877);
+  transform: scale(1000);
+}
+#checkbox_toggle:checked ~ .nav {
+  width: 100%;
+  opacity: 1;
+}
+#checkbox_toggle:checked + .hamburger .menu .menu-2 {
+  background-color: transparent;
+}
+#checkbox_toggle:checked + .hamburger .menu .menu-1 {
+  top: 25px;
+  left: 10px;
+  background-color: var(--primary-titleColor-gold);
+  transform: rotate(135deg);
+}
+#checkbox_toggle:checked + .hamburger .menu .menu-3 {
+  top: 25px;
+  left: 10px;
+  transform: rotate(-135deg);
+  background-color: var(--primary-titleColor-gold);
+}
+
+/* our story section */
+.showroom {
+  width: 100%;
+  min-height: 30rem;
+  background: url(/img/shop-img.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.between-sec {
+  padding: 20rem 0;
+  text-align: center;
+  overflow: hidden;
+}
+.between-sec-color {
+  color: var(--main-fontColor-white);
+}
+
+/* craft */
+.craft-sec {
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/img/cake-7.jpg) center no-repeat;
+  background-size: cover;
+}
+
+/* chocolate-gold */
+.chocolate-gold {
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/img/cake-12.jpg) center no-repeat;
+  background-size: cover;
+}
+
+/* section menu */
+.image-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.image-group img {
+  width: 100%;
+  height: 20rem;
+}
+
+/* contact us*/
+.contact-us form {
+  width: 100%;
+  min-width: 20rem;
+  margin-top: 5rem;
+}
+.form-input {
+  width: 100%;
+  min-width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.5rem;
+  overflow: hidden;
+  border-radius: 0.3rem;
+  border: 0.1rem solid var(--primary-titleColor-gold);
+}
+.textarea {
+  height: 10rem;
+}
+.btn-submit {
+  background-color: var(--primary-titleColor-gold);
+  padding: 1rem 0;
+  cursor: pointer;
+}
+.btn-submit:hover {
+  background-color: #daa520dc;
+}
+
+/* footer */
+footer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 5rem 0;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--main-fontColor-white);
+  background-color: var(--primary-fontColor-darkgray);
+}
+footer h4 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  color: var(--primary-titleColor-gold);
+}
+
+@media screen and (min-width: 769px) {
+  header,
+  .between-sec {
+    background-attachment: fixed;
+  }
+  .menu {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 10rem 0;
+    height: 3rem;
+    width: 100%;
+    justify-content: flex-end;
+    justify-items: end;
+    opacity: 1;
+    position: absolute;
+  }
+
+  .overlay {
+    position: initial;
+    background: none;
+    opacity: initial;
+    transform: none;
+    transition: none;
+  }
+
+  .nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    text-align: center;
+    top: initial;
+    left: initial;
+    transform: none;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .centred {
+    flex: 1;
+  }
+  .add-flex {
+    flex: 1;
+  }
+  .centred--marginright {
+    margin-right: 3.5rem;
+  }
+  .flex-order--first {
+    order: 1;
+  }
+  .flex-order--second {
+    order: 2;
+  }
+  .showroom {
+    min-height: 40rem;
+  }
+  .main-text h1 {
+    transform: translateY(1rem);
+    opacity: 0;
+    animation: 0.5s slidup 0.6s forwards;
+  }
+  .main-text h2 {
+    transform: scale(2);
+    opacity: 0;
+    animation: 0.5s zooms 0.3s forwards;
+  }
+
+  @keyframes slidup {
+    0% {
+      transform: translateY(4rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(1rem);
+      opacity: 1;
+    }
+  }
+  @keyframes zooms {
+    0% {
+      transform: scale(2);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
